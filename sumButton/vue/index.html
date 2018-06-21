@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My fist vueJS</title>
+    <style>
+      #app {
+        margin: auto;
+        width: 10%;
+      }
+      button {
+        margin: 0 1.4em;
+      }
+    </style>
+  </head>
+  <body>
+    <script src="https://unpkg.com/vue"></script>
+    <div id="app">
+      <p class='text'>Your result is {{ total }} by now</p>
+      <button class='btn-add' v-on:click="addOne">+1</button>
+      <button class='bnt-sub' v-on:click="subOne">-1</button>
+    </div>
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          total: 0
+        },
+        methods: {
+          addOne: function() {
+            this.total += 1;
+          },
+          subOne: function() {
+            this.total -= 1;
+          }
+        }
+      })
+    </script>
+  </body>
+</html>
